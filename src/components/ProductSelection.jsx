@@ -5,7 +5,7 @@ function ProductSelection(props) {
     return (
         <div className="productList">
             {props.show.map((item) => 
-                <ProductCard key={item.name} name={item.name} price={item.price}/>
+                <ProductCard key={item.name} name={item.name} package={item.package} price={item.price}/>
             )}
         </div>
     );

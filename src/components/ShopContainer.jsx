@@ -1,12 +1,10 @@
-import { useState, createContext } from "react";
+import { useState } from "react";
+import { TotalContext, CartContext } from "../Contexts.js";
 import ProductSelection from "./ProductSelection";
 import Welcome from "./Welcome";
 import Cart from "./Cart";
 import { categories, products } from "../js/products.js";
 import './Products.css'
-
-export const TotalContext = createContext(0);
-export const CartContext = createContext([]);
 
 function ShopContainer() {
     const [selectedCategory, setCategory] = useState([]);
@@ -19,11 +17,11 @@ function ShopContainer() {
     
     return(
     <div className="wrapper">
-        <TotalContext.Provider value={ {total, setTotal} }>
         <div className="categories">
             {categories.map((category) => 
             <div key={category.id} onClick={() => handleClick(category.id)}>{category.label}</div>)}
         </div>
+        <TotalContext.Provider value={ {total, setTotal} }>
         <CartContext.Provider value={ {inCart, setInCart} }>
         <div className="productSelection">
             { selectedCategory.length === 0 ? <Welcome/> : <ProductSelection show={selectedCategory}/> }
