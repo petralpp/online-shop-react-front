@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { TotalContext, CartContext } from "../Contexts.js";
-import ProductSelection from "./ProductSelection";
-import Welcome from "./Welcome";
-import Cart from "./Cart";
+import ProductSelection from "./ProductSelection.jsx";
+import Cart from "./Cart.jsx";
 import { categories, products } from "../js/products.js";
 import './Products.css'
 
-function ShopContainer() {
-    const [selectedCategory, setCategory] = useState([]);
+function Shop() {
+    const [selectedCategory, setCategory] = useState(products['vegetables']);
     const [total, setTotal] = useState(0);
     const [inCart, setInCart] = useState([]);
 
@@ -24,7 +23,7 @@ function ShopContainer() {
         <TotalContext.Provider value={ {total, setTotal} }>
         <CartContext.Provider value={ {inCart, setInCart} }>
         <div className="productSelection">
-            { selectedCategory.length === 0 ? <Welcome/> : <ProductSelection show={selectedCategory}/> }
+            { <ProductSelection show={selectedCategory}/> }
         </div>
         <Cart />
         </CartContext.Provider>
@@ -32,4 +31,4 @@ function ShopContainer() {
     </div>);
 }
 
-export default ShopContainer;
+export default Shop;

@@ -1,12 +1,12 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 3fr 1.5fr;
+    grid-template-columns: 1fr 4fr 1.5fr;
+    min-height: 60vh;
 }
 
 .productList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    border: groove;
 }
 
 .productCard {
@@ -17,6 +17,40 @@
 }
 
 .categories {
-    float: left;
-    margin: 5px;
+    font-weight: bold;
+    border-right: groove;
+    border-bottom: groove;
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#welcome-div {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#welcome-text {
+    margin: 5% 15% 5% 15%;
+}
+
+#welcome-div h1 {
+    color: #0B8E10;
+}
+
+#welcome-div button {
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    background-color: #0B8E10;
+    color: white;
+    border-radius: 8px;
+    border-color: #0B8E10;
+    font-weight: 500;
+}
+
+#bag-img {
+    height: 100%;
+    width: 100%;
 }
