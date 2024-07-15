@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useContext } from "react";
+import { TotalContext } from "../Contexts";
+import './Products.css'
 
-function Order() {
+function OrderForm() {
     const [inputs, setInputs] = useState({});
+    const { total } = useContext(TotalContext);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -11,38 +15,41 @@ function Order() {
     
       const handleSubmit = (event) => {
         event.preventDefault();
-        alert(inputs);
+        alert(inputs.address);
       }
 
     return (
-    <form onSubmit={handleSubmit}>
-        <label>Full name:
-      <input 
-        type="text" 
-        name="username" 
-        value={inputs.username || ""} 
-        onChange={handleChange}
-      />
-      </label>
-      <label>Phone number:
+      <div id="orderPage">
+      <h1>Order information</h1>
+      <p>Final bill: <bold>{total} €</bold></p>
+      <div id="orderForm">
+      <form onSubmit={handleSubmit}>
+        <label>Full name:</label><br/>
+        <input 
+          type="text" 
+          name="username" 
+          value={inputs.username || ""} 
+          onChange={handleChange}
+        /><br/>
+        <label>Phone number:</label><br/>
         <input 
           type="tel" 
           name="phone" 
           value={inputs.phone || ""} 
           onChange={handleChange}
-        />
-        </label>
-        <label>Address:
-            <input
-            type="text"
-            name="address"
-            value={inputs.address || ""}
-            onChange={handleChange}
-            />
-        </label>
-        <input type="submit"Order/>
-    </form>
+        /><br/>
+        <label>Address:</label><br/>
+        <input
+          type="text"
+          name="address"
+          value={inputs.address || ""}
+          onChange={handleChange}
+        /><br/>
+        <input type="submit" value="Order"/>
+      </form>
+      </div>
+      </div>
     );
 }
 
-export default Order;
+export default OrderForm;

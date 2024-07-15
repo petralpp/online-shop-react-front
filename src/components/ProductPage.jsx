@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { TotalContext, CartContext } from "../Contexts.js";
+//import { TotalContext, CartContext } from "../Contexts.js";
 import ProductSelection from "./ProductSelection.jsx";
-import Cart from "./Cart.jsx";
 import { categories, products } from "../js/products.js";
 import './Products.css'
 
-function Shop() {
+function ProductPage() {
     const [selectedCategory, setCategory] = useState(products['vegetables']);
-    const [total, setTotal] = useState(0);
-    const [inCart, setInCart] = useState([]);
+    const [currentHeader, setHeader] = useState('Vegetables');
 
     const handleClick = (id) => {
         setCategory(products[id]);
+
+        const newHeader = categories.find((header) => header.id === id);
+        setHeader(newHeader.label);
     }
     
     return(
@@ -20,15 +21,11 @@ function Shop() {
             {categories.map((category) => 
             <div key={category.id} onClick={() => handleClick(category.id)}>{category.label}</div>)}
         </div>
-        <TotalContext.Provider value={ {total, setTotal} }>
-        <CartContext.Provider value={ {inCart, setInCart} }>
-        <div className="productSelection">
+        <div>
+        <h1 id="currentHeader">{currentHeader}</h1>
             { <ProductSelection show={selectedCategory}/> }
         </div>
-        <Cart />
-        </CartContext.Provider>
-        </TotalContext.Provider>
     </div>);
 }
 
-export default Shop;
+export default ProductPage;

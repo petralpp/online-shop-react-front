@@ -5,8 +5,10 @@ import './Products.css';
 function ProductCard(props) {
     return (
         <div className='productCard'>
+            <div id="inlineInfo">
             <h2>{props.name}</h2>
-            <p>{props.package}</p>
+            <p><i>{props.package}</i></p>
+            </div>
             <p>{props.price} €</p>
             <div>
             <RemoveButton item={props}/>

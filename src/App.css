@@ -1,9 +1,15 @@
+#appLayout {
+  display: grid;
+  grid-template-rows: 15vh auto 15vh;
+}
+
 #header-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1%;
-  border: groove;
+  border: solid;
+  border-color: #D9D9D9;
   background-image: url("../public/images/header-cropped.jpg");
   background-size: cover;
 }
@@ -16,8 +22,29 @@
 #footer-div {
   display: flex;
   justify-content: space-evenly;
-  border-top: groove;
-  background-image: url("../public/images/footer-flipped.jpg");
+  align-items: center;
+  border-top: solid;
+  border-color: #D9D9D9;
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("../public/images/footer-flipped.jpg");
   background-size: cover;
-  opacity: 0.3;
+
+}
+
+#footer-div h3 {
+  color: #0B8E10;
+  text-align: right;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+  gap: 5%;
+  margin: 2%;
+}
+
+#loginBtn {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5%;
 }
