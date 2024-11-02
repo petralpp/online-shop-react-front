@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { TotalContext, CartContext } from "../Contexts";
+import { TotalContext, CartContext } from "../../Contexts";
 
 function RemoveButton(props) {
     const { total, setTotal } = useContext(TotalContext);
     const { inCart, setInCart } = useContext(CartContext);
 
-    const removeItem = (item) => {
+    const handleClick = (item) => {
         const itemFound = inCart.find((cartItem) => cartItem.name === item.name);
             if (itemFound) {
                 setInCart(
@@ -21,7 +21,7 @@ function RemoveButton(props) {
     }
 
     return (
-        <button value="remove" onClick={() => removeItem(props.item)}>-</button>
+        <button value="remove" class="remove-button" onClick={() => handleClick(props.item)}>-</button>
     );
 }
 

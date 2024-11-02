@@ -1,0 +1,267 @@
+#app-layout {
+    display: grid;
+    grid-template-rows: 18vh 64vh 18vh;
+}
+
+/* General */
+
+h1, h3 {
+    color: #0B8E10;
+}
+  
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: last baseline;
+    gap: 5%;
+    margin: 2%;
+}
+
+/* Buttons used in multiple components */
+
+.green-button {
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0B8E10;
+    color: white;
+    border-radius: 8px;
+    border-color: #0B8E10;
+    font-weight: 500
+}
+
+.button-disabled {
+    opacity: 0.3;
+}
+
+.regular-button {
+    padding: 10px 20px 10px 20px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    border-color: #0B8E10;
+    font-weight: 500;
+}
+.cart-hidden {
+    display:none
+}
+
+
+/* AddButton.jsx */
+
+.add-button {
+    border-radius: 5px;
+    border-color: #0B8E10;
+    background-color: #0B8E10;
+    color: white;
+    font-size: 18px;
+}
+
+/* RemoveButton.jsx */
+
+.remove-button {
+    border-radius: 5px;
+    border-color: #E0E0E0;
+    color: #0B8E10;
+    font-size: 18px;
+}
+
+/**************** COMPONENTS *********************/
+
+/* Cart.jsx */
+
+#cart {
+    overflow-y: scroll;
+    text-align: center;
+    border-left: solid;
+    border-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+}
+
+#cart-content {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#cart-content h2 {
+    opacity: 0.3;
+}
+
+.cart-list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-list-item span {
+    font-weight: bold;
+}
+
+#cart-bottom {
+    width: 100%;
+}
+
+#cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ContentLayout.jsx */
+
+#content-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 64vh;
+}
+
+/* Footer.jsx */
+
+#footer-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: solid;
+    border-color: #D9D9D9;
+    background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('/public/images/footer-flipped.jpg');
+    background-size: cover;
+}
+
+#footer-div h3 {
+    color: #0B8E10;
+    text-align: right;
+}
+
+/* Header.jsx */
+
+#header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    border: solid;
+    border-color: #D9D9D9;
+    background-image: url('/public/images/header-cropped.jpg');
+    background-size: cover;
+}
+
+/* NoPage.jsx */
+
+#no-page {
+    text-align: center;
+}
+
+/* OrderPage.jsx */
+
+#submitted {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+
+#order-page {
+    padding: 2% 20% 2% 20%;
+}
+
+#order-form {
+    width: 70%;
+}
+
+input:not([type=submit]) {
+    border-radius: 3px;
+    width: 100%;
+    margin: 2% 0% 2% 0%;
+}
+
+input[type=submit] {
+    display: block;
+    margin: auto;
+}
+
+/* ProductCard.jsx */
+
+.product-card {
+    border: solid;
+    border-color: #D9D9D9;
+    border-radius: 5%;
+    margin: 2%;
+    padding: 0% 0% 3%;
+    text-align: center;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: first baseline;
+}
+
+/* ProductPage.jsx */
+
+#categories {
+    height: 64vh;
+    border-right: solid;
+    border-color: #D9D9D9;
+    box-sizing: border-box;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #2c2c2c;
+}
+
+#categories div:hover {
+    color: #f1f1f1;
+}
+
+#categories img {
+    width: 10%;
+    opacity: 0.6;
+    padding-right: 5%;
+}
+
+#shop-wrapper {
+    display: grid; 
+    grid-template-columns: 1fr 4fr;
+    min-height: 60 vh;
+}
+
+#product-display {
+    padding: 0% 3% 2%;
+    overflow-y: scroll;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* WelcomePage.jsx */
+
+#welcome-div {
+    display: grid; 
+    grid-template-columns: 3fr 1fr;
+}
+
+#welcome-text {
+    margin: 5% 15% 5% 15%;
+}
+
+#welcome-text div {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .cart-visible {
+        display: contents;
+    }
+
+    .hidden {
+        display: none;
+    }
+}

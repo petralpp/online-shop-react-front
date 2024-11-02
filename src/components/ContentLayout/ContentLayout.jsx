@@ -1,27 +1,23 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { TotalContext, CartContext } from "../Contexts.js";
+import { TotalContext, CartContext } from "../../Contexts.js";
 import Cart from "./Cart.jsx";
-import './Products.css';
+import '../stylesheet.css';
 
-function ShopLayout() {
+function ContentLayout() {
     const [total, setTotal] = useState(0);
     const [inCart, setInCart] = useState([]);
 
     return(
-    <div id="layout">
+    <div id="content-layout">
         <TotalContext.Provider value={ {total, setTotal} }>
         <CartContext.Provider value={ {inCart, setInCart} }>
-            <div id="outletDiv">
-                <Outlet />
-            </div>
-            <div id="cartDiv">
-                <Cart />
-            </div>
+            <Outlet />
+            <Cart />
         </CartContext.Provider>
         </TotalContext.Provider>
     </div>
     );
 }
 
-export default ShopLayout;
+export default ContentLayout;
