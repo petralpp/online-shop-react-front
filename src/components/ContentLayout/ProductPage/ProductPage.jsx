@@ -2,7 +2,6 @@ import { useState } from "react";
 import ProductCard from "./ProductCard.jsx";
 import { products } from "../../../js/productData.js";
 import { categories } from "../../../js/categories.js";
-//import arrowIcon from '/icons8-right-arrow-30.png'
 
 
 function ProductPage() {
@@ -28,7 +27,7 @@ function ProductPage() {
         <div id="product-display">
             <h1>{currentHeader}</h1>
             <div id="product-list">
-                {selectedCategory.map((item) => 
+                {selectedCategory.map((item) =>
                     <ProductCard key={item.name} name={item.name} package={item.package} img={categoryId} price={item.price}/>
                 )}
             </div>

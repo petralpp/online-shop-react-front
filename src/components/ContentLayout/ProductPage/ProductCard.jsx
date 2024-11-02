@@ -1,19 +1,28 @@
-import AddButton from '../AddButton';
-import RemoveButton from '../RemoveButton';
+import { useCart } from '../../../CartContext';
 
-function ProductCard(props) {
+function ProductCard(item) {
+    const { addToCart, removeFromCart } = useCart();
+
+    const handleAddToCart = () => {
+        console.log(item);
+        addToCart(item);
+    };
+
+    const handleRemoveFromCart = () => {
+        removeFromCart(item);
+    }
 
     return (
         <div className='product-card'>
-            <div class="product-info">
-                <p><b>{props.name}</b></p>
-                <p><i>{props.package}</i></p>
+            <div className="product-info">
+                <p><b>{item.name}</b></p>
+                <p><i>{item.package}</i></p>
             </div>
-            <img src={'/images/' + props.img + '.png'}  alt='product'></img>
-            <p>{props.price} €</p>
+            <img src={'/images/' + item.img + '.png'}  alt='product'></img>
+            <p>{item.price} €</p>
             <div>
-                <RemoveButton item={props}/>
-                <AddButton item={props}/>
+                <button className="regular-button" onClick={handleRemoveFromCart}>Remove</button>
+                <button className="green-button" onClick={handleAddToCart}>Add to cart</button>
             </div>
         </div>
     );

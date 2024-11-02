@@ -17,7 +17,7 @@ h1, h3 {
     margin: 2%;
 }
 
-/* Buttons used in multiple components */
+/* Buttons */
 
 .green-button {
     padding: 10px 20px 10px 20px;
@@ -47,26 +47,6 @@ h1, h3 {
 }
 .cart-hidden {
     display:none
-}
-
-
-/* AddButton.jsx */
-
-.add-button {
-    border-radius: 5px;
-    border-color: #0B8E10;
-    background-color: #0B8E10;
-    color: white;
-    font-size: 18px;
-}
-
-/* RemoveButton.jsx */
-
-.remove-button {
-    border-radius: 5px;
-    border-color: #E0E0E0;
-    color: #0B8E10;
-    font-size: 18px;
 }
 
 /**************** COMPONENTS *********************/
@@ -179,9 +159,9 @@ input:not([type=submit]) {
     margin: 2% 0% 2% 0%;
 }
 
-input[type=submit] {
-    display: block;
-    margin: auto;
+#form-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* ProductCard.jsx */
