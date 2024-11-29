@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { usePrice } from '../../PriceContext';
 import { Link } from "react-router-dom";
+import { DeliveryIcon } from '../Icons';
 
 function OrderPage() {
     const [inputs, setInputs] = useState({});
@@ -22,7 +23,7 @@ function OrderPage() {
       isSubmitted ? 
         <div id="submitted">
           <h1>Thank you for your order!</h1>
-          <img src='/images/icons8-delivery-100.png' width={70} height={70} alt='delivery truck'></img>
+          <img src={DeliveryIcon} width={70} height={70} alt='delivery truck'></img>
           <Link to='/shop'><button class="green-button">Back to store</button></Link>
         </div>
         :

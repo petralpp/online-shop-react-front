@@ -19,10 +19,10 @@ function Cart() {
         clearPrice();
     };
 
-    return(
-    <div id="cart" className="hidden">
+    return(<>
+    <div id="cart">
             <h1>Cart</h1>
-            <div id="cart-content" className="hidden">
+            <div id="cart-content">
                 {cartItems.length === 0 ? <h2>Empty</h2> :
                 <ul>{cartItems.map((item) => 
                 <li key={item.name} className="cart-list-item">
@@ -40,7 +40,7 @@ function Cart() {
                     : <button disabled className="green-button button-disabled">Proceed to order</button>}
                 </div>
             </div>
-    </div>)
+    </div></>)
 }
 
 export default Cart;

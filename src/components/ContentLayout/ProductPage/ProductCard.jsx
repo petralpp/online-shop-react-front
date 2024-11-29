@@ -1,10 +1,9 @@
 import { useCart } from '../../../CartContext';
 
-function ProductCard(item) {
+function ProductCard({item}) {
     const { addToCart, removeFromCart } = useCart();
 
     const handleAddToCart = () => {
-        console.log(item);
         addToCart(item);
     };
 
@@ -18,11 +17,22 @@ function ProductCard(item) {
                 <p><b>{item.name}</b></p>
                 <p><i>{item.package}</i></p>
             </div>
-            <img src={'/images/' + item.img + '.png'}  alt='product'></img>
-            <p>{item.price} €</p>
             <div>
-                <button className="regular-button" onClick={handleRemoveFromCart}>Remove</button>
-                <button className="green-button" onClick={handleAddToCart}>Add to cart</button>
+                <img src={item.icon} alt='product'></img>
+            </div>
+            <div>
+                <p>{item.price} €</p>
+            </div>
+            <div>
+                {window.innerWidth > 850 ?
+                    <div>
+                        <button className="regular-button" onClick={handleRemoveFromCart}>Remove</button>
+                        <button className="green-button" onClick={handleAddToCart}>Add to cart</button>
+                    </div>
+                    : <div>
+                        <button className="regular-button" onClick={handleRemoveFromCart}>-</button>
+                        <button className="green-button" onClick={handleAddToCart}>+</button>
+                    </div>}
             </div>
         </div>
     );

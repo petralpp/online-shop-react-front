@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BagImage from "../images/bag10.jpg";
 
 function WelcomePage() {
 
@@ -17,7 +18,7 @@ function WelcomePage() {
             </div>
         </div>
         <div id="image">
-            <img src="/images/bag10.jpg" alt="A grocery bag" id="bag-img"></img>
+            <img src={BagImage} alt="A grocery bag" id="bag-img"></img>
         </div>
     </div>);
 }
