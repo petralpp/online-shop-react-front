@@ -57,7 +57,7 @@ function OrderPage() {
                 required
               /><br/>
               <div id="form-buttons">
-                <Link to='/shop'><button class="regular-button">Back to store</button></Link>
+                <Link to='/shop'><button className="regular-button">Back to store</button></Link>
                 {totalPrice > 0 ? <input type="submit" value="Order" className="green-button"/> 
                 : <input type='submit' value="Order" className="green-button button-disabled" disabled/>}
               </div>

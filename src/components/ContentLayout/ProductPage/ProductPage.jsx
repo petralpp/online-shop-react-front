@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import { useMediaQuery } from "react-responsive";
 import ProductCard from "./ProductCard.jsx";
 import { products } from "../../../js/productData.js";
 import { categories } from "../../../js/categories.js";
@@ -9,15 +8,17 @@ import SidebarDesktop from "./SidebarDesktop.jsx";
 import SidebarMobile from "./SidebarMobile.jsx";
 import Modal from "../Modal.jsx";
 import Cart from "../Cart.jsx";
+import useWindowResizeThreshold from "../../../js/windowResize.js";
 
+const MAX_TABLET_WIDTH = 850;
 
 function ProductPage() {
     const [selectedCategory, setCategory] = useState(products['vegetables']);
     const { cartItems } = useCart();
     const { totalPrice } = usePrice();
+    const isTabletSize = useWindowResizeThreshold(MAX_TABLET_WIDTH);
     
     const [currentHeader, setHeader] = useState('Vegetables');
-    //const isTabletOrMobile = useMediaQuery({ maxWidth: 768 });
     const [modal, setModal] = useState(false);
 
     function handleDataFromChild(id) {
@@ -29,17 +30,17 @@ function ProductPage() {
     
     return(
     <div id="shop-wrapper">
-        {window.innerWidth > 850 ? <SidebarDesktop sendDataToParent={handleDataFromChild}/> 
-        : <div  id="category-bar"><SidebarMobile sendDataToParent={handleDataFromChild} />
-        <p>Items in cart: {cartItems.length} Total: {totalPrice}</p>
-        <button id="cart-button" className="green-button" onClick={() => setModal(true)}>Cart</button> 
-        <Modal
-            openModal={modal}
-            closeModal={() => setModal(false)}
-            >
-            <Cart />
-        </Modal>
-      </div>}
+        {isTabletSize ? 
+        <div id="category-bar"><SidebarMobile sendDataToParent={handleDataFromChild} />
+            <button id="cart-button" className="green-button" onClick={() => setModal(true)}>Cart</button>
+            <Modal
+                openModal={modal}
+                closeModal={() => setModal(false)}
+                >
+                <Cart />
+            </Modal>
+            <div id="bar-cart-info"><p>Items in cart: {cartItems.length}</p><p> Total: {totalPrice} €</p></div>
+        </div> : <SidebarDesktop sendDataToParent={handleDataFromChild}/> }
         <div id="product-display">
             <h1>{currentHeader}</h1>
             <div id="product-list">

@@ -17,8 +17,8 @@ function WelcomePage() {
                 <Link to='shop'><button className="green-button">To store</button></Link>
             </div>
         </div>
-        <div id="image">
-            <img src={BagImage} alt="A grocery bag" id="bag-img"></img>
+        <div>
+            <img src={BagImage} alt="A grocery bag" id="bag-image" height="440" width="350"></img>
         </div>
     </div>);
 }

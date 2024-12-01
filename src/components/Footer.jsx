@@ -1,13 +1,10 @@
-import { BeetLogo } from "./Icons";
+import storeLogoOpa from "../images/storeLogoOpa.png";
 
 function Footer() {
 
     return(
     <div id="footer-div">
-        <div className='logo'>
-            <img src={BeetLogo} width={30} height={50} alt='beet'></img>
-            <h3>eFood <br/> Store</h3>
-        </div>
+        <img src={storeLogoOpa} width={80} height={50} alt='beet'></img>
         <p>Info</p>
         <p>Work for us</p>
         <p>Terms & conditions</p>
