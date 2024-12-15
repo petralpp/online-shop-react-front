@@ -28,7 +28,7 @@ function Cart() {
                 <li key={item.name} className="cart-list-item">
                     <span>{item.quantity} x </span>
                     {item.name} {item.price} € 
-                <div><button onClick={() => handleRemoveFromCart(item)}>-</button>
+                <div className="item-buttons"><button onClick={() => handleRemoveFromCart(item)}>-</button>
                 <button onClick={() => handleAddToCart(item)}>+</button></div></li>)}</ul>}
             </div>
             <div id="cart-bottom">

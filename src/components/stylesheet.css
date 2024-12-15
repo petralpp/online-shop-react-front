@@ -54,20 +54,22 @@ h1, h3 {
 /* Cart.jsx */
 
 #cart {
-    overflow-y: scroll;
     text-align: center;
-    border-left: solid;
-    border-color: #D9D9D9;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    overflow-y: scroll;
     padding: 3%;
 }
 
 #cart-content {
     box-sizing: border-box;
     width: 100%;
+}
+
+#cart-content ul {
+    padding-left: 0pt;
 }
 
 #cart-content h2 {
@@ -81,6 +83,12 @@ h1, h3 {
 
 .cart-list-item span {
     font-weight: bold;
+}
+
+.item-buttons button {
+    background-color: #f1f1f1;
+    border-color: rgb(210, 210, 210);
+    border-radius: 20%;
 }
 
 #cart-bottom {
@@ -136,8 +144,6 @@ h1, h3 {
     max-height: 80%;
     padding: 3%;
     text-align: center;
-    overflow-y: scroll;
-    
 }
 
 /* NoPage.jsx */
@@ -285,6 +291,14 @@ select {
         position:static;
     }
 
+    .cart-list-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-auto-rows: 1fr;
+        align-items: center;
+        gap: 10em 0em;
+    }
+
     #content-layout {
         display: grid;
         grid-template-columns: 1fr;
@@ -295,6 +309,10 @@ select {
         padding: 3%;
         flex-wrap: wrap;
         background-size: cover;
+    }
+
+    .item-buttons button {
+        font-size: larger;
     }
 
     #shop-wrapper {
@@ -311,7 +329,7 @@ select {
         flex-wrap: wrap;
         border-bottom: solid;
         border-color: #D9D9D9;
-        padding: 5%;
+        padding: 2% 3%;
     }
 
     #product-list {
