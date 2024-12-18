@@ -9,8 +9,9 @@ import SidebarMobile from "./SidebarMobile.jsx";
 import Modal from "../Modal.jsx";
 import Cart from "../Cart.jsx";
 import useWindowResizeThreshold from "../../../js/windowResize.js";
+import { CartIcon } from "../../Icons.js";
 
-const MAX_TABLET_WIDTH = 850;
+export const MAX_TABLET_WIDTH = 850;
 
 function ProductPage() {
     const [selectedCategory, setCategory] = useState(products['vegetables']);
@@ -32,7 +33,9 @@ function ProductPage() {
     <div id="shop-wrapper">
         {isTabletSize ? 
         <div id="category-bar"><SidebarMobile sendDataToParent={handleDataFromChild} />
-            <button id="cart-button" className="green-button" onClick={() => setModal(true)}>Cart</button>
+            <button className="cart-button" onClick={() => setModal(true)}>
+            <img src={CartIcon} width={30} height={30} alt="cart"></img>
+            </button>
             <Modal
                 openModal={modal}
                 closeModal={() => setModal(false)}

@@ -59,6 +59,8 @@ h1, h3 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border-left: solid;
+    border-color: #D9D9D9;
     overflow-y: scroll;
     padding: 3%;
 }
@@ -154,30 +156,56 @@ h1, h3 {
 
 /* OrderPage.jsx */
 
+#delivery-icon {
+    margin-bottom: 5%;
+}
+
 #submitted {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10%;
+    border-right: solid;
+    border-color: #D9D9D9;
 }
 
 #order-page {
-    padding: 2% 20% 2% 20%;
+    padding: 2% 10% 10%;
+    overflow-y: scroll;
 }
 
 #order-form {
-    width: 70%;
+    width: 80%;
+    align-content: center;
+}
+
+#order-form span {
+    color: red;
 }
 
 input:not([type=submit]) {
     border-radius: 3px;
     width: 100%;
-    margin: 2% 0% 2% 0%;
+    margin: 2% 1%;
+}
+
+input[name="zip"] {
+    width: 80%;
+}
+
+.form-row {
+    display: flex;
+}
+
+.form-group {
+    padding: 5px;
+    width: 50%;
 }
 
 #form-buttons {
     display: flex;
     justify-content: space-between;
+    margin: 2%;
 }
 
 /* ProductCard.jsx */
@@ -260,11 +288,11 @@ select {
 
 #welcome-div {
     display: grid; 
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
 }
 
 #welcome-text {
-    margin: 5% 15% 5% 15%;
+    margin: 5% 15%;
 }
 
 #welcome-text div {
@@ -285,10 +313,27 @@ select {
         display: none;
     }
 
+    #bar-cart-info {
+        font-weight: bold;
+    }
+
     #beet-logo-h {
         width: 100px;
         height: 70px;
         position:static;
+    }
+
+    #cart {
+        border: none;
+        overflow-y: hidden;
+    }
+
+    .cart-button {
+        background-color:#ffffff;
+        border-color:#000000;
+        border-radius: 50%;
+        padding: 2%;
+        margin: 2%;
     }
 
     .cart-list-item {
@@ -296,7 +341,7 @@ select {
         grid-template-columns: 1fr 2fr 2fr;
         grid-auto-rows: 1fr;
         align-items: center;
-        gap: 10em 0em;
+        margin: 1%;
     }
 
     #content-layout {
@@ -332,6 +377,15 @@ select {
         padding: 2% 3%;
     }
 
+    #order-page {
+        scrollbar-color: none;
+        border: none;
+    }
+
+    #order-page-modal {
+        text-align: right;
+    }
+
     #product-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -348,7 +402,17 @@ select {
     }
 
     #welcome-text {
-        margin: 1% 10% 1% 10%;
+        margin: 1% 10%;
+    }
+
+}
+
+@media (orientation: landscape) {
+
+    #footer-div {
+        padding: 1%;
+        flex-wrap: wrap;
+        background-size: cover;
     }
 
 }

@@ -7,6 +7,7 @@ import meat from "../images/meat.png";
 import vegan from "../images/vegan.png";
 import vegetables from "../images/vegetables.png";
 import delivery from "../images/icons8-delivery-100.png";
+import cart from "../images/icons8-cart-50.png";
 
 export {
     dairy as DairyIcon,
@@ -17,5 +18,6 @@ export {
     meat as MeatIcon,
     vegan as VeganIcon,
     vegetables as VegetableIcon,
-    delivery as DeliveryIcon
+    delivery as DeliveryIcon,
+    cart as CartIcon
 };

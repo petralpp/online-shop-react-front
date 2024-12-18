@@ -4,8 +4,7 @@ import { CartProvider } from "../../CartContext.js";
 import Cart from "./Cart.jsx";
 import useWindowResizeThreshold from "../../js/windowResize.js";
 import '../stylesheet.css';
-
-const MAX_TABLET_WIDTH = 850;
+import { MAX_TABLET_WIDTH } from "./ProductPage/ProductPage.jsx";
 
 function ContentLayout() {
     const isTabletSize = useWindowResizeThreshold(MAX_TABLET_WIDTH);
