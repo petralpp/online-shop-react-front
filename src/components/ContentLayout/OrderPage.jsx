@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { usePrice } from '../../PriceContext';
+import { usePrice } from '../../contexts/PriceContext';
 import { Link } from "react-router-dom";
 import { DeliveryIcon } from '../Icons';
 import { CartIcon } from '../Icons';
@@ -30,8 +30,8 @@ function OrderPage() {
       isSubmitted ? 
         <div id="submitted">
           <h1>Thank you for your order!</h1>
-          <img src={DeliveryIcon} width={70} height={70} alt='delivery truck' id="delivery-icon"></img>
-          <Link to='/shop'><button className="green-button">Back to store</button></Link>
+          <img src={DeliveryIcon} width={70} height={70} alt="delivery truck" id="delivery-icon"></img>
+          <Link to="/shop"><button className="green-button">Back to store</button></Link>
         </div>
         :
         <div id="order-page">
@@ -53,73 +53,85 @@ function OrderPage() {
             <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label><span>*</span>Full name</label><br/>
+                <label htmlFor="username"><span>*</span>Full name</label><br/>
                 <input 
                   type="text" 
+                  id="username"
                   name="username" 
                   value={inputs.username || ""} 
                   onChange={handleChange}
+                  autoComplete='on'
                   required
               /></div>
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label><span>*</span>Phone number</label><br/>
+                  <label htmlFor="phone"><span>*</span>Phone number</label><br/>
                   <input 
                     type="tel" 
+                    id="phone"
                     name="phone" 
                     value={inputs.phone || ""} 
                     onChange={handleChange}
+                    autoComplete='on'
                     required
                 /></div>
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label>E-mail</label><br/>
+                  <label htmlFor="email">E-mail</label><br/>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     value={inputs.email || ""}
                     onChange={handleChange}
+                    autoComplete='on'
                 /></div>
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label><span>*</span>Street address</label><br/>
+                  <label htmlFor="address"><span>*</span>Street address</label><br/>
                   <input
                     type="text"
+                    id="address"
                     name="address"
                     value={inputs.address || ""}
                     onChange={handleChange}
+                    autoComplete='on'
                     required
                 /></div>
               </div>
               <div className="form-row">
                 <div className="form-group">
-                  <label><span>*</span>ZIP code</label><br/>
+                  <label htmlFor="zip"><span>*</span>ZIP code</label><br/>
                   <input
                     type="text"
                     pattern="[0-9]{5}"
+                    id="zip"
                     name="zip"
                     placeholder="5 digit number"
                     value={inputs.zip || ""}
                     onChange={handleChange}
+                    autoComplete='on'
                     required
                   /></div>
                   <div className="form-group">
-                    <label><span>*</span>City</label><br/>
+                    <label htmlFor="city"><span>*</span>City</label><br/>
                     <input
                       type="text"
+                      id="city"
                       name="city"
                       value={inputs.city || ""}
                       onChange={handleChange}
+                      autoComplete='on'
                       required
                     /></div>
               </div>
               <div id="form-buttons">
-                <Link to='/shop'><button className="regular-button">Back</button></Link>
+                <Link to="/shop"><button className="regular-button">Back</button></Link>
                 {totalPrice > 0 ? <input type="submit" value="Order" className="green-button"/> 
-                : <input type='submit' value="Order" className="green-button button-disabled" disabled/>}
+                : <input type="submit" value="Order" className="green-button button-disabled" disabled/>}
               </div>
             </form>
           </div>

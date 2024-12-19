@@ -1,4 +1,4 @@
-import { useCart } from '../../../CartContext';
+import { useCart } from '../../../contexts/CartContext';
 
 function ProductCard({item}) {
     const { addToCart, removeFromCart } = useCart();
@@ -12,13 +12,13 @@ function ProductCard({item}) {
     }
 
     return (
-        <div className='product-card'>
+        <div className="product-card">
             <div className="product-info">
                 <p><b>{item.name}</b></p>
                 <p><i>{item.package}</i></p>
             </div>
             <div>
-                <img src={item.icon} alt='product'></img>
+                <img src={item.icon} alt="product"></img>
             </div>
             <div>
                 <p>{item.price} €</p>

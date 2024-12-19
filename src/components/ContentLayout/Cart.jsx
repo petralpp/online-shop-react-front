@@ -1,5 +1,5 @@
-import { usePrice } from "../../PriceContext";
-import { useCart } from "../../CartContext";
+import { usePrice } from "../../contexts/PriceContext";
+import { useCart } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 
 function Cart() {
@@ -34,9 +34,9 @@ function Cart() {
             <div id="cart-bottom">
                 <h3>Total: {totalPrice} €</h3>
                 <div id="cart-buttons">
-                    <button className="regular-button" value='clear' onClick={handleClearCart}>Clear cart</button>
+                    <button className="regular-button" value="clear" onClick={handleClearCart}>Clear cart</button>
                     {totalPrice > 0 ? 
-                    <Link to='/shop/order'><button className="green-button">Proceed to order</button></Link> 
+                    <Link to="/shop/order"><button className="green-button">Proceed to order</button></Link> 
                     : <button disabled className="green-button button-disabled">Proceed to order</button>}
                 </div>
             </div>

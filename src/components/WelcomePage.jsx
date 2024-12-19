@@ -14,7 +14,7 @@ function WelcomePage() {
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
             <div>
-                <Link to='shop'><button className="green-button">To store</button></Link>
+                <Link to="shop"><button className="green-button">To store</button></Link>
             </div>
         </div>
         <div id="bag-img-div">
