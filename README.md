@@ -1,3 +1,14 @@
+This project is a simple online grocery store where the user can browse different product categories,
+add to and remove them from cart and place an order. The project includes different versions for 
+desktop and mobile/tablet. The responsiveness is mainly implemented with CSS and conditional component rendering.
+
+The purpose of the project was to get to know React and try out different aspects; creating components, nesting them,
+sharing data with props and contexts, implementing navigation with React Router, and so on.
+The process was very iterative, but fun and instructive. 
+
+Link to Figma drafts:
+https://www.figma.com/design/682XUdgMbVvCZ6qsbzisUR/Grocery-store-front?node-id=0-1&t=3HoMPI4OxEWp5gPI-1
+-------------------------------------------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
